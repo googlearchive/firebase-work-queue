@@ -36,8 +36,9 @@ WorkQueue.prototype.tryToProcess = function() {
       } else {
         return;
       }
-    }, function(success) {
-       if(success) {
+    }, function(error, committed, snapshot, dummy) {
+       if (error) throw error;
+       if(committed) {
          console.log("Claimed a job.");
 	 self.processingCallback(dataToProcess, function() {
 	   self.readyToProcess();
