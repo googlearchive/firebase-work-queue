@@ -3,9 +3,9 @@ firebase-work-queue - A Simple Firebase Queue
 
 This is an example of processing data using Firebase as a queuing system.
 
-To run, first you'll need to download the Firebase node client:
+To run, first you'll need to install the Firebase node package:
     
-    curl https://cdn.firebase.com/v0/firebase-node.js > firebase-node.js
+    npm install firebase
 
 To process elements in the work queue, start a worker like this:
 
