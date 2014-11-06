@@ -11,7 +11,7 @@
 function WorkQueue(queueRef, processingCallback) {
   this.processingCallback = processingCallback;
   this.busy = false;
-  queueRef.startAt().limit(1).on("child_added", function(snap) {
+  queueRef.limitToFirst(1).on("child_added", function(snap) {
     this.currentItem = snap.ref();
     this.tryToProcess();
   }, this);
